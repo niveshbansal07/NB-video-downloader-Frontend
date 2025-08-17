@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Video Downloader</title>
+    <meta name="description" content="Download YouTube videos in high quality with dynamic quality selection">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎥</text></svg>">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🎥</div>
+                    <h1 class="logo-text">Video Downloader</h1>
+                </div>
+                <p class="tagline">Professional YouTube video downloader with dynamic quality selection</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- URL Input Section -->
+            <section class="url-section">
+                <div class="url-container">
+                    <div class="input-group">
+                        <input 
+                            type="url" 
+                            id="videoUrl" 
+                            class="url-input" 
+                            placeholder="Paste YouTube video URL here..."
+                            autocomplete="off"
+                        >
+                        <button id="previewBtn" class="preview-btn">
+                            <span class="btn-text">Preview</span>
+                            <span class="btn-icon">🔍</span>
+                        </button>
+                    </div>
+                    <div class="url-examples">
+                        <span class="example-text">Examples:</span>
+                        <button class="example-btn" data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">YouTube Video</button>
+                        <button class="example-btn" data-url="https://youtu.be/dQw4w9WgXcQ">Short URL</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading Section -->
+            <section id="loadingSection" class="loading-section hidden">
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <p class="loading-text">Processing video information...</p>
+                </div>
+            </section>
+
+            <!-- Video Preview Section -->
+            <section id="previewSection" class="preview-section hidden">
+                <div class="preview-container">
+                    <!-- Video Info -->
+                    <div class="video-info">
+                        <div class="video-thumbnail">
+                            <img id="videoThumbnail" src="" alt="Video thumbnail">
+                            <div class="video-duration">
+                                <span id="videoDuration">0:00</span>
+                            </div>
+                        </div>
+                        <div class="video-details">
+                            <h2 id="videoTitle" class="video-title">Video Title</h2>
+                            <p id="videoUploader" class="video-uploader">By Uploader</p>
+                            <div class="video-stats">
+                                <span id="videoViews" class="video-stat">0 views</span>
+                                <span id="videoLikes" class="video-stat">0 likes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quality Selection -->
+                    <div class="quality-section">
+                        <h3 class="quality-title">Select Quality</h3>
+                        <div id="qualityButtons" class="quality-buttons">
+                            <!-- Quality buttons will be dynamically generated here -->
+                        </div>
+                    </div>
+
+                    <!-- Download Section -->
+                    <div id="downloadSection" class="download-section hidden">
+                        <div class="download-container">
+                            <div class="download-info">
+                                <span id="selectedQuality" class="selected-quality">Quality: 1080p</span>
+                                <span id="fileSize" class="file-size">Size: 15.2 MB</span>
+                            </div>
+                            <button id="downloadBtn" class="download-btn">
+                                <span class="btn-text">Download Video</span>
+                                <span class="btn-icon">⬇️</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section id="errorSection" class="error-section hidden">
+                <div class="error-container">
+                    <div class="error-icon">⚠️</div>
+                    <h3 class="error-title">Error</h3>
+                    <p id="errorMessage" class="error-message">An error occurred while processing the video.</p>
+                    <button id="retryBtn" class="retry-btn">Try Again</button>
+                </div>
+            </section>
+
+            <!-- Success Section -->
+            <section id="successSection" class="success-section hidden">
+                <div class="success-container">
+                    <div class="success-icon">✅</div>
+                    <h3 class="success-title">Download Ready!</h3>
+                    <p class="success-message">Your video has been processed successfully.</p>
+                    <a id="downloadLink" href="#" class="final-download-btn" download>
+                        <span class="btn-text">Download Now</span>
+                        <span class="btn-icon">💾</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Professional video downloader with dynamic quality selection. 
+                    Download YouTube videos in your preferred quality.
+                </p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/api.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
