@@ -6,7 +6,7 @@
 class VideoAPI {
     constructor() {
         // Update this URL to your Railway backend URL after deployment
-        this.baseURL = 'http://localhost:8000';
+        this.baseURL = 'https://nb-video-downloader-backend-production.up.railway.app/';
         
         // API endpoints
         this.endpoints = {
@@ -278,3 +278,4 @@ if (window.location.hostname !== 'localhost' && window.location.hostname !== '12
 
 // Export for use in other modules
 window.videoAPI = videoAPI;
+
